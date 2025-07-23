@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Products</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <!-- Topbar -->
+    <div
+      class="topbar d-flex justify-content-between align-items-center p-2 bg-light border-bottom"
+    >
+      <div class="d-flex align-items-center gap-2">
+        <button
+          class="btn d-md-none"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasSidebar"
+          aria-controls="offcanvasSidebar"
+        >
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="topbar-logo">
+          <img src="./assets/logo.png" alt="Logo" height="36" />
+        </div>
+      </div>
+      <div class="avatar">
+        <img style="width: 36px" src="./assets/profile.png" alt="Avatar" />
+      </div>
+    </div>
+
+    <!-- Layout -->
+    <div class="layout d-flex">
+      <!-- Offcanvas Sidebar (mobile) -->
+      <div
+        class="offcanvas offcanvas-start d-md-none"
+        tabindex="-1"
+        id="offcanvasSidebar"
+        aria-labelledby="offcanvasSidebarLabel"
+      >
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasSidebarLabel">Menu</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="offcanvas-body p-0">
+          <ul class="nav flex-column px-2">
+            <li>
+              <a href="./index.html" class="nav-link"
+                ><i class="fa fa-user"></i> Users</a
+              >
+            </li>
+            <li>
+              <a
+                class="nav-link d-flex justify-content-between align-items-center"
+                data-bs-toggle="collapse"
+                href="#mobileProductsMenu"
+              >
+                <span><i class="fa fa-box"></i> Products</span>
+                <i class="fa fa-chevron-down small"></i>
+              </a>
+              <div class="collapse ps-3" id="mobileProductsMenu">
+                <ul class="nav flex-column">
+                  <li>
+                    <a href="./addProduct.html" class="nav-link"
+                      ><i class="fa fa-plus"></i> Add Product</a
+                    >
+                  </li>
+                  <li>
+                    <a href="./allProducts.html" class="nav-link active"
+                      ><i class="fa fa-list"></i> All Products</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <a href="./allTasks.html" class="nav-link"
+                ><i class="fa fa-tasks"></i> Tasks</a
+              >
+            </li>
+            <li>
+              <a href="./contacts.html" class="nav-link"
+                ><i class="fa fa-trophy"></i> Contacts</a
+              >
+            </li>
+            <li>
+              <a href="./affiliate.html" class="nav-link"
+                ><i class="fa fa-link"></i> Affiliate</a
+              >
+            </li>
+            <li>
+              <a href="./vipLevels.html" class="nav-link"
+                ><i class="fa fa-star"></i> VIP Levels</a
+              >
+            </li>
+            <li>
+              <a href="./payment.html" class="nav-link"
+                ><i class="fa fa-credit-card"></i> Payment</a
+              >
+            </li>
+            <li>
+              <a href="./setting.html" class="nav-link"
+                ><i class="fa fa-cog"></i> Settings</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Desktop Sidebar -->
+      <div
+        class="sidebar d-none d-md-block bg-white border-end"
+        style="width: 250px"
+      >
+        <div class="search-box">
+          <input type="text" placeholder="Search here..." />
+          <i class="fa fa-search text-dark"></i>
+        </div>
+        <ul class="nav flex-column px-2">
+          <li>
+            <a href="./index.html" class="nav-link"
+              ><i class="fa fa-user"></i> Users</a
+            >
+          </li>
+          <li>
+            <a
+              class="nav-link d-flex justify-content-between align-items-center"
+              data-bs-toggle="collapse"
+              href="#productsMenu"
+            >
+              <span><i class="fa fa-box"></i> Products</span>
+              <i class="fa fa-chevron-down small"></i>
+            </a>
+            <div class="collapse ps-3" id="productsMenu">
+              <ul class="nav flex-column">
+                <li>
+                  <a href="./addProduct.html" class="nav-link"
+                    ><i class="fa fa-plus"></i> Add Product</a
+                  >
+                </li>
+                <li>
+                  <a href="./allProducts.html" class="nav-link active"
+                    ><i class="fa fa-list"></i> All Products</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="./allTasks.html" class="nav-link"
+              ><i class="fa fa-tasks"></i> Tasks</a
+            >
+          </li>
+          <li>
+            <a href="./contacts.html" class="nav-link"
+              ><i class="fa fa-trophy"></i> Contacts</a
+            >
+          </li>
+          <li>
+            <a href="./affiliate.html" class="nav-link"
+              ><i class="fa fa-link"></i> Affiliate</a
+            >
+          </li>
+          <li>
+            <a href="./vipLevels.html" class="nav-link"
+              ><i class="fa fa-star"></i> VIP Levels</a
+            >
+          </li>
+          <li>
+            <a href="./payment.html" class="nav-link"
+              ><i class="fa fa-credit-card"></i> Payment</a
+            >
+          </li>
+          <li>
+            <a href="./setting.html" class="nav-link"
+              ><i class="fa fa-cog"></i> Settings</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <div class="main-content flex-grow-1">
+        <div class="container my-4">
+          <h5 class="fw-bold text-muted" style="font-size: 21.1px">
+            All Products
+          </h5>
+
+          <!-- Search + Filter -->
+          <div class="d-flex justify-content-end align-items-center gap-1 my-3">
+            <input
+              type="text"
+              class="form-control form-control-sm"
+              placeholder="Search here..."
+              style="width: 200px"
+            />
+            <select class="form-select form-select-sm" style="width: 120px">
+              <option selected>Username</option>
+              <option>Task No</option>
+              <option>Level</option>
+            </select>
+            <button class="btn btn-sm btn-dark">
+              <i class="fa fa-search"></i>
+            </button>
+          </div>
+
+          <!-- Table -->
+          <div class="container px-2">
+            <div class="bg-white border rounded p-3">
+              <!-- Table Header -->
+              <div
+                class="row fw-bold align-items-center pb-2 mb-2 d-none d-md-flex border-bottom"
+              >
+                <div class="col-1 ps-4">ID</div>
+                <div class="col-5">Title</div>
+                <div class="col-2 text-center">Image</div>
+                <div class="col-1 text-center">
+                  <div class="dropdown">
+                    <a
+                      class="fw-bold text-dark text-decoration-none dropdown-toggle"
+                      href="#"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                    >
+                      Price
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Low to High</a></li>
+                      <li><a class="dropdown-item" href="#">High to Low</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-2 text-center">
+                  <div class="dropdown">
+                    <a
+                      class="fw-bold text-dark text-decoration-none dropdown-toggle"
+                      href="#"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                    >
+                      Status
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Active</a></li>
+                      <li><a class="dropdown-item" href="#">Inactive</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-1 text-center">Action</div>
+              </div>
+
+              <!-- Product Row Template -->
+              <div class="d-none d-md-block">
+                <div
+                  class="row align-items-center bg-white border rounded py-3 mb-2 mx-0 gx-0"
+                >
+                  <div class="col-1 ps-4">4</div>
+                  <div class="col-5 small fw-semibold">
+                    Find New Products 0 to 5 Orders & Best SEO + multiple images
+                    %<br />
+                    New Products 0 to 5 Orders & Best SEO + multiple images %
+                  </div>
+                  <div class="col-2 text-center">
+                    <img src="./assets/upload.png" width="36" />
+                  </div>
+                  <div class="col-1 fw-bold text-center">$ 45</div>
+                  <div class="col-2 fw-bold text-success text-center">
+                    Active
+                  </div>
+                  <div class="col-1 text-center">
+                    <div class="dropdown">
+                      <button
+                        class="btn btn-outline-secondary btn-sm dropdown-toggle"
+                        type="button"
+                        data-bs-toggle="dropdown"
+                      >
+                        Action
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Edit</a></li>
+                        <li><a class="dropdown-item" href="#">Delete</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="row align-items-center bg-white border rounded py-3 mb-2 mx-0 gx-0"
+                >
+                  <div class="col-1 ps-4">3</div>
+                  <div class="col-5 small fw-semibold">
+                    Find New Products 0 to 5 Orders & Best SEO + multiple images
+                    %<br />
+                    New Products 0 to 5 Orders & Best SEO + multiple images %
+                  </div>
+                  <div class="col-2 text-center">
+                    <img src="./assets/upload.png" width="36" />
+                  </div>
+                  <div class="col-1 fw-bold text-center">$ 45</div>
+                  <div class="col-2 fw-bold text-success text-center">
+                    Active
+                  </div>
+                  <div class="col-1 text-center">
+                    <div class="dropdown">
+                      <button
+                        class="btn btn-outline-secondary btn-sm dropdown-toggle"
+                        type="button"
+                        data-bs-toggle="dropdown"
+                      >
+                        Action
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Edit</a></li>
+                        <li><a class="dropdown-item" href="#">Delete</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="row align-items-center bg-white border rounded py-3 mb-2 mx-0 gx-0"
+                >
+                  <div class="col-1 ps-4">2</div>
+                  <div class="col-5 small fw-semibold">
+                    Find New Products 0 to 5 Orders & Best SEO + multiple images
+                    %<br />
+                    New Products 0 to 5 Orders & Best SEO + multiple images %
+                  </div>
+                  <div class="col-2 text-center">
+                    <img src="./assets/upload.png" width="36" />
+                  </div>
+                  <div class="col-1 fw-bold text-center">$ 45</div>
+                  <div class="col-2 fw-bold text-success text-center">
+                    Active
+                  </div>
+                  <div class="col-1 text-center">
+                    <div class="dropdown">
+                      <button
+                        class="btn btn-outline-secondary btn-sm dropdown-toggle"
+                        type="button"
+                        data-bs-toggle="dropdown"
+                      >
+                        Action
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Edit</a></li>
+                        <li><a class="dropdown-item" href="#">Delete</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="row align-items-center bg-white border rounded py-3 mb-2 mx-0 gx-0"
+                >
+                  <div class="col-1 ps-4">1</div>
+                  <div class="col-5 small fw-semibold">
+                    Find New Products 0 to 5 Orders & Best SEO + multiple images
+                    %<br />
+                    New Products 0 to 5 Orders & Best SEO + multiple images %
+                  </div>
+                  <div class="col-2 text-center">
+                    <img src="./assets/upload.png" width="36" />
+                  </div>
+                  <div class="col-1 fw-bold text-center">$ 45</div>
+                  <div class="col-2 fw-bold text-success text-center">
+                    Active
+                  </div>
+                  <div class="col-1 text-center">
+                    <div class="dropdown">
+                      <button
+                        class="btn btn-outline-secondary btn-sm dropdown-toggle"
+                        type="button"
+                        data-bs-toggle="dropdown"
+                      >
+                        Action
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Edit</a></li>
+                        <li><a class="dropdown-item" href="#">Delete</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="d-md-none">
+                <div class="card d-md-none mb-3">
+                  <div class="card-body p-3">
+                    <h6 class="fw-bold mb-3">Product List Filters</h6>
+
+                    <div class="mb-2"><strong>ID</strong>: Auto</div>
+
+                    <div class="mb-2">
+                      <strong>Title</strong>: Product Title
+                    </div>
+
+                    <div class="mb-2"><strong>Image</strong>: Thumbnail</div>
+
+                    <div class="mb-2">
+                      <strong>Price:</strong>
+                      <div class="dropdown d-inline-block">
+                        <a
+                          class="fw-bold text-dark text-decoration-none dropdown-toggle"
+                          href="#"
+                          role="button"
+                          data-bs-toggle="dropdown"
+                        >
+                          Sort
+                        </a>
+                        <ul class="dropdown-menu">
+                          <li>
+                            <a class="dropdown-item" href="#">Low to High</a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" href="#">High to Low</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div class="mb-2">
+                      <strong>Status:</strong>
+                      <div class="dropdown d-inline-block">
+                        <a
+                          class="fw-bold text-dark text-decoration-none dropdown-toggle"
+                          href="#"
+                          role="button"
+                          data-bs-toggle="dropdown"
+                        >
+                          Filter
+                        </a>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#">Active</a></li>
+                          <li>
+                            <a class="dropdown-item" href="#">Inactive</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div><strong>Action:</strong> Edit/Delete</div>
+                  </div>
+                </div>
+                <div class="card mb-3 d-md-none">
+                  <div class="card-body p-3">
+                    <h6 class="fw-bold mb-2">4. Product Details</h6>
+
+                    <p class="small mb-2">
+                      Find New Products 0 to 5 Orders & Best SEO + multiple
+                      images %<br />
+                      New Products 0 to 5 Orders & Best SEO + multiple images %
+                    </p>
+
+                    <div class="mb-2">
+                      <strong>Image:</strong><br />
+                      <img src="./assets/upload.png" width="48" />
+                    </div>
+
+                    <p class="mb-1"><strong>Price:</strong> $45</p>
+                    <p class="mb-2 text-success">
+                      <strong>Status:</strong> Active
+                    </p>
+
+                    <div class="dropdown">
+                      <button
+                        class="btn btn-outline-secondary btn-sm dropdown-toggle"
+                        type="button"
+                        data-bs-toggle="dropdown"
+                      >
+                        Action
+                      </button>
+                      <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#">Edit</a></li>
+                        <li><a class="dropdown-item" href="#">Delete</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card mb-3 d-md-none">
+                  <div class="card-body p-3">
+                    <h6 class="fw-bold mb-2">3. Product Details</h6>
+
+                    <p class="small mb-2">
+                      Find New Products 0 to 5 Orders & Best SEO + multiple
+                      images %<br />
+                      New Products 0 to 5 Orders & Best SEO + multiple images %
+                    </p>
+
+                    <div class="mb-2">
+                      <strong>Image:</strong><br />
+                      <img src="./assets/upload.png" width="48" />
+                    </div>
+
+                    <p class="mb-1"><strong>Price:</strong> $45</p>
+                    <p class="mb-2 text-success">
+                      <strong>Status:</strong> Active
+                    </p>
+
+                    <div class="dropdown">
+                      <button
+                        class="btn btn-outline-secondary btn-sm dropdown-toggle"
+                        type="button"
+                        data-bs-toggle="dropdown"
+                      >
+                        Action
+                      </button>
+                      <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#">Edit</a></li>
+                        <li><a class="dropdown-item" href="#">Delete</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card mb-3 d-md-none">
+                  <div class="card-body p-3">
+                    <h6 class="fw-bold mb-2">2. Product Details</h6>
+
+                    <p class="small mb-2">
+                      Find New Products 0 to 5 Orders & Best SEO + multiple
+                      images %<br />
+                      New Products 0 to 5 Orders & Best SEO + multiple images %
+                    </p>
+
+                    <div class="mb-2">
+                      <strong>Image:</strong><br />
+                      <img src="./assets/upload.png" width="48" />
+                    </div>
+
+                    <p class="mb-1"><strong>Price:</strong> $45</p>
+                    <p class="mb-2 text-success">
+                      <strong>Status:</strong> Active
+                    </p>
+
+                    <div class="dropdown">
+                      <button
+                        class="btn btn-outline-secondary btn-sm dropdown-toggle"
+                        type="button"
+                        data-bs-toggle="dropdown"
+                      >
+                        Action
+                      </button>
+                      <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#">Edit</a></li>
+                        <li><a class="dropdown-item" href="#">Delete</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card mb-3 d-md-none">
+                  <div class="card-body p-3">
+                    <h6 class="fw-bold mb-2">1. Product Details</h6>
+
+                    <p class="small mb-2">
+                      Find New Products 0 to 5 Orders & Best SEO + multiple
+                      images %<br />
+                      New Products 0 to 5 Orders & Best SEO + multiple images %
+                    </p>
+
+                    <div class="mb-2">
+                      <strong>Image:</strong><br />
+                      <img src="./assets/upload.png" width="48" />
+                    </div>
+
+                    <p class="mb-1"><strong>Price:</strong> $45</p>
+                    <p class="mb-2 text-success">
+                      <strong>Status:</strong> Active
+                    </p>
+
+                    <div class="dropdown">
+                      <button
+                        class="btn btn-outline-secondary btn-sm dropdown-toggle"
+                        type="button"
+                        data-bs-toggle="dropdown"
+                      >
+                        Action
+                      </button>
+                      <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#">Edit</a></li>
+                        <li><a class="dropdown-item" href="#">Delete</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

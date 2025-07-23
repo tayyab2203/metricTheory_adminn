@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacts</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <!-- Topbar -->
+    <div
+      class="topbar d-flex justify-content-between align-items-center p-2 bg-light border-bottom"
+    >
+      <div class="d-flex align-items-center gap-2">
+        <button
+          class="btn d-md-none"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasSidebar"
+          aria-controls="offcanvasSidebar"
+        >
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="topbar-logo">
+          <img src="./assets/logo.png" alt="Logo" height="36" />
+        </div>
+      </div>
+      <div class="avatar">
+        <img style="width: 36px" src="./assets/profile.png" alt="Avatar" />
+      </div>
+    </div>
+
+    <!-- Layout -->
+    <div class="layout d-flex">
+      <!-- Offcanvas Sidebar for mobile -->
+      <div
+        class="offcanvas offcanvas-start d-md-none"
+        tabindex="-1"
+        id="offcanvasSidebar"
+        aria-labelledby="offcanvasSidebarLabel"
+      >
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasSidebarLabel">Menu</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="offcanvas-body p-0">
+          <ul class="nav flex-column px-2">
+            <li>
+              <a href="./index.html" class="nav-link"
+                ><i class="fa fa-user"></i> Users</a
+              >
+            </li>
+            <li>
+              <a
+                class="nav-link d-flex justify-content-between align-items-center"
+                data-bs-toggle="collapse"
+                href="#mobileProductsMenu"
+                role="button"
+                aria-expanded="false"
+                aria-controls="mobileProductsMenu"
+              >
+                <span><i class="fa fa-box"></i> Products</span>
+                <i class="fa fa-chevron-down small"></i>
+              </a>
+              <div class="collapse ps-3" id="mobileProductsMenu">
+                <ul class="nav flex-column">
+                  <li>
+                    <a href="./addProduct.html" class="nav-link"
+                      ><i class="fa fa-plus"></i> Add Product</a
+                    >
+                  </li>
+                  <li>
+                    <a href="./allProducts.html" class="nav-link"
+                      ><i class="fa fa-list"></i> All Products</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <a href="./allTasks.html" class="nav-link"
+                ><i class="fa fa-tasks"></i> Tasks</a
+              >
+            </li>
+            <li>
+              <a href="./contacts.html" class="nav-link active"
+                ><i class="fa fa-trophy"></i> Contacts</a
+              >
+            </li>
+            <li>
+              <a href="./affiliate.html" class="nav-link"
+                ><i class="fa fa-link"></i> Affiliate</a
+              >
+            </li>
+            <li>
+              <a href="./vipLevels.html" class="nav-link"
+                ><i class="fa fa-star"></i> VIP Levels</a
+              >
+            </li>
+            <li>
+              <a href="./payment.html" class="nav-link"
+                ><i class="fa fa-credit-card"></i> Payment</a
+              >
+            </li>
+            <li>
+              <a href="./setting.html" class="nav-link"
+                ><i class="fa fa-cog"></i> Settings</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Desktop Sidebar -->
+      <div
+        class="sidebar d-none d-md-block bg-white border-end"
+        style="width: 250px"
+      >
+        <div class="search-box">
+          <input type="text" placeholder="Search here..." />
+          <i class="fa fa-search text-dark"></i>
+        </div>
+        <ul class="nav flex-column px-2">
+          <li>
+            <a href="./index.html" class="nav-link"
+              ><i class="fa fa-user"></i> Users</a
+            >
+          </li>
+          <li>
+            <a
+              class="nav-link d-flex justify-content-between align-items-center"
+              data-bs-toggle="collapse"
+              href="#productsMenu"
+              role="button"
+              aria-expanded="false"
+              aria-controls="productsMenu"
+            >
+              <span><i class="fa fa-box"></i> Products</span>
+              <i class="fa fa-chevron-down small"></i>
+            </a>
+            <div class="collapse ps-3" id="productsMenu">
+              <ul class="nav flex-column">
+                <li>
+                  <a href="./addProduct.html" class="nav-link"
+                    ><i class="fa fa-plus"></i> Add Product</a
+                  >
+                </li>
+                <li>
+                  <a href="./allProducts.html" class="nav-link"
+                    ><i class="fa fa-list"></i> All Products</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="./allTasks.html" class="nav-link"
+              ><i class="fa fa-tasks"></i> Tasks</a
+            >
+          </li>
+          <li>
+            <a href="./contacts.html" class="nav-link active"
+              ><i class="fa fa-trophy"></i> Contacts</a
+            >
+          </li>
+          <li>
+            <a href="./affiliate.html" class="nav-link"
+              ><i class="fa fa-link"></i> Affiliate</a
+            >
+          </li>
+          <li>
+            <a href="./vipLevels.html" class="nav-link"
+              ><i class="fa fa-star"></i> VIP Levels</a
+            >
+          </li>
+          <li>
+            <a href="./payment.html" class="nav-link"
+              ><i class="fa fa-credit-card"></i> Payment</a
+            >
+          </li>
+          <li>
+            <a href="./setting.html" class="nav-link"
+              ><i class="fa fa-cog"></i> Settings</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <!-- Main Content -->
+      <div class="main-content flex-grow-1">
+        <div class="container my-4">
+          <!-- Page Title -->
+          <h5 class="fw-bold text-muted" style="font-size: 21.1px">Contacts</h5>
+          <div class="d-flex justify-content-end align-items-center gap-1 my-3">
+            <!-- empty space -->
+          </div>
+
+          <!-- Table -->
+          <div class="container px-2">
+            <div class="bg-white border rounded p-3">
+              <!-- table header -->
+              <div
+                class="row fw-bold align-items-center pb-2 mb-2 d-none d-md-flex"
+                style="border-bottom: 1.5px solid black !important"
+              >
+                <div class="col-1" style="padding-left: 22px">No</div>
+                <div class="col-3 small">Name</div>
+                <div class="col-4 small">Number/Link</div>
+                <div class="col-1 small">
+                  <select
+                    class="form-select form-select-sm border border-black-subtle rounded-3 px-2 py-1"
+                  >
+                    <option>Status</option>
+                    <option>Active</option>
+                    <option>Inactive</option>
+                  </select>
+                </div>
+                <div class="col-1 text-end"></div>
+              </div>
+
+              <!-- Contact Cards -->
+              <div class="d-none d-md-block">
+                <div
+                  class="row align-items-center bg-white border rounded py-3 mb-2 mx-0 gx-0"
+                >
+                  <div class="col-1" style="padding-left: 15px">1</div>
+                  <div class="col-3 fw-semibold">WhatsApp</div>
+                  <div class="col-4"><strong>+923212131213</strong></div>
+                  <div class="col-2">
+                    <span
+                      class="badge rounded-pill bg-success text-white px-3 py-1"
+                      >Active</span
+                    >
+                  </div>
+                  <div class="col-2 text-end">
+                    <a
+                      href="#"
+                      class="text-primary text-decoration-none edit-contact-btn"
+                      data-name="WhatsApp"
+                      data-type="Link"
+                      data-link="+923212131213"
+                      data-status="Inactive"
+                      data-bs-toggle="modal"
+                      data-bs-target="#contactModal"
+                      style="padding-right: 9px !important"
+                    >
+                      Edit
+                    </a>
+                  </div>
+                </div>
+
+                <div
+                  class="row align-items-center bg-white border rounded py-3 mb-2 mx-0 gx-0"
+                >
+                  <div class="col-1" style="padding-left: 15px">2</div>
+                  <div class="col-3 fw-semibold">WhatsApp</div>
+                  <div class="col-4"><strong>+923212131213</strong></div>
+                  <div class="col-2">
+                    <span
+                      class="badge rounded-pill bg-success text-white px-3 py-1"
+                      >Active</span
+                    >
+                  </div>
+                  <div class="col-2 text-end">
+                    <a
+                      href="#"
+                      class="text-primary text-decoration-none edit-contact-btn"
+                      data-name="WhatsApp"
+                      data-type="Link"
+                      data-link="+923212131213"
+                      data-status="Inactive"
+                      data-bs-toggle="modal"
+                      data-bs-target="#contactModal"
+                      style="padding-right: 9px !important"
+                    >
+                      Edit
+                    </a>
+                  </div>
+                </div>
+
+                <div
+                  class="row align-items-center bg-white border rounded py-3 mb-2 mx-0 gx-0"
+                >
+                  <div class="col-1" style="padding-left: 15px">3</div>
+                  <div class="col-3 fw-semibold">WhatsApp</div>
+                  <div class="col-4"><strong>+923212131213</strong></div>
+                  <div class="col-2">
+                    <span
+                      class="badge rounded-pill bg-success text-white px-3 py-1"
+                      >Active</span
+                    >
+                  </div>
+                  <div class="col-2 text-end">
+                    <a
+                      href="#"
+                      class="text-primary text-decoration-none edit-contact-btn"
+                      data-name="WhatsApp"
+                      data-type="Link"
+                      data-link="+923212131213"
+                      data-status="Inactive"
+                      data-bs-toggle="modal"
+                      data-bs-target="#contactModal"
+                      style="padding-right: 9px !important"
+                    >
+                      Edit
+                    </a>
+                  </div>
+                </div>
+
+                <div
+                  class="row align-items-center bg-white border rounded py-3 mb-2 mx-0 gx-0"
+                >
+                  <div class="col-1" style="padding-left: 15px">4</div>
+                  <div class="col-3 fw-semibold">WhatsApp</div>
+                  <div class="col-4"><strong>+923212131213</strong></div>
+                  <div class="col-2">
+                    <span
+                      class="badge rounded-pill bg-success text-white px-3 py-1"
+                      >Active</span
+                    >
+                  </div>
+                  <div class="col-2 text-end">
+                    <a
+                      href="#"
+                      class="text-primary text-decoration-none edit-contact-btn"
+                      data-name="WhatsApp"
+                      data-type="Link"
+                      data-link="+923212131213"
+                      data-status="Inactive"
+                      data-bs-toggle="modal"
+                      data-bs-target="#contactModal"
+                      style="padding-right: 9px !important"
+                    >
+                      Edit
+                    </a>
+                  </div>
+                </div>
+
+                <div
+                  class="row align-items-center bg-white border rounded py-3 mb-2 mx-0 gx-0"
+                >
+                  <div class="col-1" style="padding-left: 15px">5</div>
+                  <div class="col-3 fw-semibold">WhatsApp</div>
+                  <div class="col-4"><strong>+923212131213</strong></div>
+                  <div class="col-2">
+                    <span
+                      class="badge rounded-pill bg-success text-white px-3 py-1"
+                      >Active</span
+                    >
+                  </div>
+                  <div class="col-2 text-end">
+                    <a
+                      href="#"
+                      class="text-primary text-decoration-none edit-contact-btn"
+                      data-name="WhatsApp"
+                      data-type="Link"
+                      data-link="+923212131213"
+                      data-status="Inactive"
+                      data-bs-toggle="modal"
+                      data-bs-target="#contactModal"
+                      style="padding-right: 9px !important"
+                    >
+                      Edit
+                    </a>
+                  </div>
+                </div>
+
+                <div
+                  class="row align-items-center bg-white border rounded py-3 mb-2 mx-0 gx-0"
+                >
+                  <div class="col-1" style="padding-left: 15px">6</div>
+                  <div class="col-3 fw-semibold">WhatsApp</div>
+                  <div class="col-4"><strong>+923212131213</strong></div>
+                  <div class="col-2">
+                    <span
+                      class="badge rounded-pill bg-success text-white px-3 py-1"
+                      >Active</span
+                    >
+                  </div>
+                  <div class="col-2 text-end">
+                    <a
+                      href="#"
+                      class="text-primary text-decoration-none edit-contact-btn"
+                      data-name="WhatsApp"
+                      data-type="Link"
+                      data-link="+923212131213"
+                      data-status="Inactive"
+                      data-bs-toggle="modal"
+                      data-bs-target="#contactModal"
+                      style="padding-right: 9px !important"
+                    >
+                      Edit
+                    </a>
+                  </div>
+                </div>
+
+                <div
+                  class="row align-items-center bg-white border rounded py-3 mb-2 mx-0 gx-0"
+                >
+                  <div class="col-1" style="padding-left: 15px">7</div>
+                  <div class="col-3 fw-semibold">WhatsApp</div>
+                  <div class="col-4"><strong>+923212131213</strong></div>
+                  <div class="col-2">
+                    <span
+                      class="badge rounded-pill bg-success text-white px-3 py-1"
+                      >Active</span
+                    >
+                  </div>
+                  <div class="col-2 text-end">
+                    <a
+                      href="#"
+                      class="text-primary text-decoration-none edit-contact-btn"
+                      data-name="WhatsApp"
+                      data-type="Link"
+                      data-link="+923212131213"
+                      data-status="Inactive"
+                      data-bs-toggle="modal"
+                      data-bs-target="#contactModal"
+                      style="padding-right: 9px !important"
+                    >
+                      Edit
+                    </a>
+                  </div>
+                </div>
+
+                <div
+                  class="row align-items-center bg-white border rounded py-3 mb-2 mx-0 gx-0"
+                >
+                  <div class="col-1" style="padding-left: 15px">8</div>
+                  <div class="col-3 fw-semibold">WhatsApp</div>
+                  <div class="col-4"><strong>+923212131213</strong></div>
+                  <div class="col-2">
+                    <span
+                      class="badge rounded-pill bg-success text-white px-3 py-1"
+                      >Active</span
+                    >
+                  </div>
+                  <div class="col-2 text-end">
+                    <a
+                      href="#"
+                      class="text-primary text-decoration-none edit-contact-btn"
+                      data-name="WhatsApp"
+                      data-type="Link"
+                      data-link="+923212131213"
+                      data-status="Inactive"
+                      data-bs-toggle="modal"
+                      data-bs-target="#contactModal"
+                      style="padding-right: 9px !important"
+                    >
+                      Edit
+                    </a>
+                  </div>
+                </div>
+
+                <div
+                  class="row align-items-center bg-white border rounded py-3 mb-2 mx-0 gx-0"
+                >
+                  <div class="col-1" style="padding-left: 15px">9</div>
+                  <div class="col-3 fw-semibold">WhatsApp</div>
+                  <div class="col-4"><strong>+923212131213</strong></div>
+                  <div class="col-2">
+                    <span
+                      class="badge rounded-pill bg-success text-white px-3 py-1"
+                      >Active</span
+                    >
+                  </div>
+                  <div class="col-2 text-end">
+                    <a
+                      href="#"
+                      class="text-primary text-decoration-none edit-contact-btn"
+                      data-name="WhatsApp"
+                      data-type="Link"
+                      data-link="+923212131213"
+                      data-status="Inactive"
+                      data-bs-toggle="modal"
+                      data-bs-target="#contactModal"
+                      style="padding-right: 9px !important"
+                    >
+                      Edit
+                    </a>
+                  </div>
+                </div>
+
+                <div
+                  class="row align-items-center bg-white border rounded py-3 mb-2 mx-0 gx-0"
+                >
+                  <div class="col-1" style="padding-left: 15px">10</div>
+                  <div class="col-3 fw-semibold">WhatsApp</div>
+                  <div class="col-4"><strong>+923212131213</strong></div>
+                  <div class="col-2">
+                    <span
+                      class="badge rounded-pill bg-danger text-white px-3 py-1"
+                      >InActive</span
+                    >
+                  </div>
+                  <div class="col-2 text-end">
+                    <a
+                      href="#"
+                      class="text-primary text-decoration-none edit-contact-btn"
+                      data-name="WhatsApp"
+                      data-type="Link"
+                      data-link="+923212131213"
+                      data-status="Inactive"
+                      data-bs-toggle="modal"
+                      data-bs-target="#contactModal"
+                      style="padding-right: 9px !important"
+                    >
+                      Edit
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="d-md-none">
+                <div class="card mb-3 d-md-none">
+                  <div class="card-body">
+                    <h6 class="mb-1">
+                      1. <strong>WhatsApp</strong> - +923212131213
+                    </h6>
+                    <p class="mb-2">
+                      Status:
+                      <span
+                        class="badge rounded-pill bg-success text-white px-3 py-1"
+                        >Active</span
+                      >
+                    </p>
+                    <div class="text-end">
+                      <a
+                        href="#"
+                        class="text-primary text-decoration-none edit-contact-btn"
+                        data-name="WhatsApp"
+                        data-type="Link"
+                        data-link="+923212131213"
+                        data-status="Inactive"
+                        data-bs-toggle="modal"
+                        data-bs-target="#contactModal"
+                      >
+                        Edit
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="card mb-3 d-md-none">
+                  <div class="card-body">
+                    <h6 class="mb-1">
+                      1. <strong>WhatsApp</strong> - +923212131213
+                    </h6>
+                    <p class="mb-2">
+                      Status:
+                      <span
+                        class="badge rounded-pill bg-success text-white px-3 py-1"
+                        >Active</span
+                      >
+                    </p>
+                    <div class="text-end">
+                      <a
+                        href="#"
+                        class="text-primary text-decoration-none edit-contact-btn"
+                        data-name="WhatsApp"
+                        data-type="Link"
+                        data-link="+923212131213"
+                        data-status="Inactive"
+                        data-bs-toggle="modal"
+                        data-bs-target="#contactModal"
+                      >
+                        Edit
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="card mb-3 d-md-none">
+                  <div class="card-body">
+                    <h6 class="mb-1">
+                      2. <strong>WhatsApp</strong> - +923212131213
+                    </h6>
+                    <p class="mb-2">
+                      Status:
+                      <span
+                        class="badge rounded-pill bg-success text-white px-3 py-1"
+                        >Active</span
+                      >
+                    </p>
+                    <div class="text-end">
+                      <a
+                        href="#"
+                        class="text-primary text-decoration-none edit-contact-btn"
+                        data-name="WhatsApp"
+                        data-type="Link"
+                        data-link="+923212131213"
+                        data-status="Inactive"
+                        data-bs-toggle="modal"
+                        data-bs-target="#contactModal"
+                      >
+                        Edit
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="card mb-3 d-md-none">
+                  <div class="card-body">
+                    <h6 class="mb-1">
+                      3. <strong>WhatsApp</strong> - +923212131213
+                    </h6>
+                    <p class="mb-2">
+                      Status:
+                      <span
+                        class="badge rounded-pill bg-success text-white px-3 py-1"
+                        >Active</span
+                      >
+                    </p>
+                    <div class="text-end">
+                      <a
+                        href="#"
+                        class="text-primary text-decoration-none edit-contact-btn"
+                        data-name="WhatsApp"
+                        data-type="Link"
+                        data-link="+923212131213"
+                        data-status="Inactive"
+                        data-bs-toggle="modal"
+                        data-bs-target="#contactModal"
+                      >
+                        Edit
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="card mb-3 d-md-none">
+                  <div class="card-body">
+                    <h6 class="mb-1">
+                      4. <strong>WhatsApp</strong> - +923212131213
+                    </h6>
+                    <p class="mb-2">
+                      Status:
+                      <span
+                        class="badge rounded-pill bg-success text-white px-3 py-1"
+                        >Active</span
+                      >
+                    </p>
+                    <div class="text-end">
+                      <a
+                        href="#"
+                        class="text-primary text-decoration-none edit-contact-btn"
+                        data-name="WhatsApp"
+                        data-type="Link"
+                        data-link="+923212131213"
+                        data-status="Inactive"
+                        data-bs-toggle="modal"
+                        data-bs-target="#contactModal"
+                      >
+                        Edit
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="card mb-3 d-md-none">
+                  <div class="card-body">
+                    <h6 class="mb-1">
+                    5. <strong>WhatsApp</strong> - +923212131213
+                    </h6>
+                    <p class="mb-2">
+                      Status:
+                      <span
+                        class="badge rounded-pill bg-success text-white px-3 py-1"
+                        >Active</span
+                      >
+                    </p>
+                    <div class="text-end">
+                      <a
+                        href="#"
+                        class="text-primary text-decoration-none edit-contact-btn"
+                        data-name="WhatsApp"
+                        data-type="Link"
+                        data-link="+923212131213"
+                        data-status="Inactive"
+                        data-bs-toggle="modal"
+                        data-bs-target="#contactModal"
+                      >
+                        Edit
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="card mb-3 d-md-none">
+                  <div class="card-body">
+                    <h6 class="mb-1">
+                      6. <strong>WhatsApp</strong> - +923212131213
+                    </h6>
+                    <p class="mb-2">
+                      Status:
+                      <span
+                        class="badge rounded-pill bg-success text-white px-3 py-1"
+                        >Active</span
+                      >
+                    </p>
+                    <div class="text-end">
+                      <a
+                        href="#"
+                        class="text-primary text-decoration-none edit-contact-btn"
+                        data-name="WhatsApp"
+                        data-type="Link"
+                        data-link="+923212131213"
+                        data-status="Inactive"
+                        data-bs-toggle="modal"
+                        data-bs-target="#contactModal"
+                      >
+                        Edit
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="card mb-3 d-md-none">
+                  <div class="card-body">
+                    <h6 class="mb-1">
+                      7. <strong>WhatsApp</strong> - +923212131213
+                    </h6>
+                    <p class="mb-2">
+                      Status:
+                      <span
+                        class="badge rounded-pill bg-success text-white px-3 py-1"
+                        >Active</span
+                      >
+                    </p>
+                    <div class="text-end">
+                      <a
+                        href="#"
+                        class="text-primary text-decoration-none edit-contact-btn"
+                        data-name="WhatsApp"
+                        data-type="Link"
+                        data-link="+923212131213"
+                        data-status="Inactive"
+                        data-bs-toggle="modal"
+                        data-bs-target="#contactModal"
+                      >
+                        Edit
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="card mb-3 d-md-none">
+                  <div class="card-body">
+                    <h6 class="mb-1">
+                      8. <strong>WhatsApp</strong> - +923212131213
+                    </h6>
+                    <p class="mb-2">
+                      Status:
+                      <span
+                        class="badge rounded-pill bg-success text-white px-3 py-1"
+                        >Active</span
+                      >
+                    </p>
+                    <div class="text-end">
+                      <a
+                        href="#"
+                        class="text-primary text-decoration-none edit-contact-btn"
+                        data-name="WhatsApp"
+                        data-type="Link"
+                        data-link="+923212131213"
+                        data-status="Inactive"
+                        data-bs-toggle="modal"
+                        data-bs-target="#contactModal"
+                      >
+                        Edit
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="card mb-3 d-md-none">
+                  <div class="card-body">
+                    <h6 class="mb-1">
+                      9. <strong>WhatsApp</strong> - +923212131213
+                    </h6>
+                    <p class="mb-2">
+                      Status:
+                      <span
+                        class="badge rounded-pill bg-success text-white px-3 py-1"
+                        >Active</span
+                      >
+                    </p>
+                    <div class="text-end">
+                      <a
+                        href="#"
+                        class="text-primary text-decoration-none edit-contact-btn"
+                        data-name="WhatsApp"
+                        data-type="Link"
+                        data-link="+923212131213"
+                        data-status="Inactive"
+                        data-bs-toggle="modal"
+                        data-bs-target="#contactModal"
+                      >
+                        Edit
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="card mb-3 d-md-none">
+                  <div class="card-body">
+                    <h6 class="mb-1">
+                      10. <strong>WhatsApp</strong> - +923212131213
+                    </h6>
+                    <p class="mb-2">
+                      Status:
+                      <span
+                        class="badge rounded-pill bg-danger text-white px-3 py-1"
+                        >InActive</span
+                      >
+                    </p>
+                    <div class="text-end">
+                      <a
+                        href="#"
+                        class="text-primary text-decoration-none edit-contact-btn"
+                        data-name="WhatsApp"
+                        data-type="Link"
+                        data-link="+923212131213"
+                        data-status="Inactive"
+                        data-bs-toggle="modal"
+                        data-bs-target="#contactModal"
+                      >
+                        Edit
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Edit/Add Contact Modal -->
+    <div class="modal fade" id="contactModal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content rounded border-0">
+          <div
+            class="modal-header border-bottom"
+            style="border-bottom: 1px solid black !important"
+          >
+            <h5
+              class="modal-title fw-semibold w-100 text-center"
+              style="font-size: 16px"
+            >
+              Add New Contact
+            </h5>
+          </div>
+          <div class="modal-body px-4 py-3">
+            <form id="contactForm">
+              <div class="mb-3">
+                <label class="form-label fw-semibold" style="font-size: 14px"
+                  >Contact Name</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="contactName"
+                  placeholder="WhatsApp"
+                />
+              </div>
+              <div class="mb-3">
+                <label class="form-label fw-semibold" style="font-size: 14px"
+                  >Type</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="contactType"
+                  placeholder="Link"
+                />
+              </div>
+              <div class="mb-3">
+                <label class="form-label fw-semibold" style="font-size: 14px"
+                  >Enter Link</label
+                >
+                <input type="text" class="form-control" id="contactLink" />
+              </div>
+              <div class="mb-3">
+                <label class="form-label fw-semibold" style="font-size: 14px"
+                  >Status</label
+                >
+                <select class="form-select" id="contactStatus">
+                  <option selected>Active</option>
+                  <option>Inactive</option>
+                </select>
+              </div>
+              <button
+                type="submit"
+                class="btn w-100 fw-bold text-white"
+                style="background-color: #6610f2"
+              >
+                Submit
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

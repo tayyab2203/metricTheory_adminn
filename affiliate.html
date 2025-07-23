@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Affiliate | Admin</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <!-- Topbar -->
+    <div
+      class="topbar d-flex justify-content-between align-items-center p-2 bg-light border-bottom"
+    >
+      <div class="d-flex align-items-center gap-2">
+        <button
+          class="btn d-md-none"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasSidebar"
+          aria-controls="offcanvasSidebar"
+        >
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="topbar-logo">
+          <img src="./assets/logo.png" alt="Logo" height="36" />
+        </div>
+      </div>
+      <div class="avatar">
+        <img style="width: 36px" src="./assets/profile.png" alt="Avatar" />
+      </div>
+    </div>
+
+    <!-- Layout -->
+    <div class="layout d-flex">
+      <!-- Offcanvas Sidebar (mobile) -->
+      <div
+        class="offcanvas offcanvas-start d-md-none"
+        tabindex="-1"
+        id="offcanvasSidebar"
+        aria-labelledby="offcanvasSidebarLabel"
+      >
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasSidebarLabel">Menu</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="offcanvas-body p-0">
+          <ul class="nav flex-column px-2">
+            <li>
+              <a href="./index.html" class="nav-link"
+                ><i class="fa fa-user"></i> Users</a
+              >
+            </li>
+            <li>
+              <a
+                class="nav-link d-flex justify-content-between align-items-center"
+                data-bs-toggle="collapse"
+                href="#mobileProductsMenu"
+              >
+                <span><i class="fa fa-box"></i> Products</span>
+                <i class="fa fa-chevron-down small"></i>
+              </a>
+              <div class="collapse ps-3" id="mobileProductsMenu">
+                <ul class="nav flex-column">
+                  <li>
+                    <a href="./addProduct.html" class="nav-link"
+                      ><i class="fa fa-plus"></i> Add Product</a
+                    >
+                  </li>
+                  <li>
+                    <a href="./allProducts.html" class="nav-link"
+                      ><i class="fa fa-list"></i> All Products</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <a href="./allTasks.html" class="nav-link"
+                ><i class="fa fa-tasks"></i> Tasks</a
+              >
+            </li>
+            <li>
+              <a href="./contacts.html" class="nav-link"
+                ><i class="fa fa-trophy"></i> Contacts</a
+              >
+            </li>
+            <li>
+              <a href="./affiliate.html" class="nav-link active"
+                ><i class="fa fa-link"></i> Affiliate</a
+              >
+            </li>
+            <li>
+              <a href="./vipLevels.html" class="nav-link"
+                ><i class="fa fa-star"></i> VIP Levels</a
+              >
+            </li>
+            <li>
+              <a href="./payment.html" class="nav-link"
+                ><i class="fa fa-credit-card"></i> Payment</a
+              >
+            </li>
+            <li>
+              <a href="./setting.html" class="nav-link"
+                ><i class="fa fa-cog"></i> Settings</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Desktop Sidebar -->
+      <div
+        class="sidebar d-none d-md-block bg-white border-end"
+        style="width: 250px"
+      >
+        <div class="search-box">
+          <input type="text" placeholder="Search here..." />
+          <i class="fa fa-search text-dark"></i>
+        </div>
+        <ul class="nav flex-column px-2">
+          <li>
+            <a href="./index.html" class="nav-link"
+              ><i class="fa fa-user"></i> Users</a
+            >
+          </li>
+          <li>
+            <a
+              class="nav-link d-flex justify-content-between align-items-center"
+              data-bs-toggle="collapse"
+              href="#productsMenu"
+            >
+              <span><i class="fa fa-box"></i> Products</span>
+              <i class="fa fa-chevron-down small"></i>
+            </a>
+            <div class="collapse ps-3" id="productsMenu">
+              <ul class="nav flex-column">
+                <li>
+                  <a href="./addProduct.html" class="nav-link"
+                    ><i class="fa fa-plus"></i> Add Product</a
+                  >
+                </li>
+                <li>
+                  <a href="./allProducts.html" class="nav-link"
+                    ><i class="fa fa-list"></i> All Products</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="./allTasks.html" class="nav-link"
+              ><i class="fa fa-tasks"></i> Tasks</a
+            >
+          </li>
+          <li>
+            <a href="./contacts.html" class="nav-link"
+              ><i class="fa fa-trophy"></i> Contacts</a
+            >
+          </li>
+          <li>
+            <a href="./affiliate.html" class="nav-link active"
+              ><i class="fa fa-link"></i> Affiliate</a
+            >
+          </li>
+          <li>
+            <a href="./vipLevels.html" class="nav-link"
+              ><i class="fa fa-star"></i> VIP Levels</a
+            >
+          </li>
+          <li>
+            <a href="./payment.html" class="nav-link"
+              ><i class="fa fa-credit-card"></i> Payment</a
+            >
+          </li>
+          <li>
+            <a href="./setting.html" class="nav-link"
+              ><i class="fa fa-cog"></i> Settings</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <!-- Main Content -->
+      <div class="main-content flex-grow-1">
+        <div class="container my-4">
+          <h5 class="fw-bold text-muted" style="font-size: 21.1px">
+            Affiliates
+          </h5>
+
+          <!-- Search + Filter -->
+          <div class="row my-3 align-items-center">
+            <div class="col-12 col-md-6 mb-2 mb-md-0">
+              
+            </div>
+            <div class="col-12 col-md-6">
+              <div class="d-flex justify-content-md-end flex-wrap gap-2">
+                <a
+                href="#"
+                data-bs-toggle="modal"
+                data-bs-target="#commissionModal"
+                class="fw-semibold text-primary"
+                style="font-size: 18px"
+                >Commission</a
+              >
+                <input
+                  type="text"
+                  class="form-control form-control-sm"
+                  placeholder="Search here..."
+                  style="max-width: 250px"
+                />
+                <select
+                  class="form-select form-select-sm"
+                  style="max-width: 140px"
+                >
+                  <option selected>Username</option>
+                  <option>Code</option>
+                  <option>Status</option>
+                </select>
+                <button class="btn btn-sm btn-dark">
+                  <i class="fa fa-search"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Affiliates Table -->
+          <div class="container px-2">
+            <div class="bg-white border rounded p-3">
+              <!-- Table Header -->
+              <div
+                class="row fw-bold align-items-center pb-2 mb-2 d-none d-md-flex"
+                style="border-bottom: 1.5px solid black !important"
+              >
+                <div class="col-1" style="padding-left: 22px">No</div>
+                <div class="col-2">Username</div>
+                <div class="col-3">Code</div>
+                <div class="col-2">Commission %</div>
+                <div class="col-2">Status</div>
+                <div class="col-2 text-end">Action</div>
+              </div>
+
+              <!-- Row -->
+              <div class="d-none d-md-block">
+                <!-- Repeat for each affiliate -->
+                <div
+                  class="row align-items-center bg-white border rounded py-3 mb-2 mx-0 gx-0"
+                >
+                  <div class="col-1" style="padding-left: 15px">1</div>
+                  <div class="col-2"><strong>Username</strong></div>
+                  <div class="col-3">GHY4234342</div>
+                  <div class="col-2 fw-bold">10%</div>
+                  <div class="col-2">
+                    <span
+                      class="badge rounded-pill bg-success text-white px-3 py-1"
+                      >Active</span
+                    >
+                  </div>
+                  <div class="col-2 text-end">
+                    <a href="#" class="text-primary text-decoration-none"
+                      >Edit</a
+                    >
+                  </div>
+                </div>
+
+                <!-- Add more rows as needed -->
+
+                 <div
+                  class="row align-items-center bg-white border rounded py-3 mb-2 mx-0 gx-0"
+                >
+                  <div class="col-1" style="padding-left: 15px">1</div>
+                  <div class="col-2"><strong>Username</strong></div>
+                  <div class="col-3">GHY4234342</div>
+                  <div class="col-2 fw-bold">10%</div>
+                  <div class="col-2">
+                    <span
+                      class="badge rounded-pill bg-success text-white px-3 py-1"
+                      >Active</span
+                    >
+                  </div>
+                  <div class="col-2 text-end">
+                    <a href="#" class="text-primary text-decoration-none"
+                      >Edit</a
+                    >
+                  </div>
+                </div>
+
+                 <div
+                  class="row align-items-center bg-white border rounded py-3 mb-2 mx-0 gx-0"
+                >
+                  <div class="col-1" style="padding-left: 15px">1</div>
+                  <div class="col-2"><strong>Username</strong></div>
+                  <div class="col-3">GHY4234342</div>
+                  <div class="col-2 fw-bold">10%</div>
+                  <div class="col-2">
+                    <span
+                      class="badge rounded-pill bg-danger text-white px-3 py-1"
+                      >InActive</span
+                    >
+                  </div>
+                  <div class="col-2 text-end">
+                    <a href="#" class="text-primary text-decoration-none"
+                      >Edit</a
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Mobile Layout -->
+              <div class="d-md-none">
+                <!-- Card 1 -->
+                <div class="card mb-3">
+                  <div class="card-body">
+                    <h6 class="mb-1">
+                      1. <strong>Username</strong> - GHY4234342
+                    </h6>
+                    <p class="mb-1">Commission: 10%</p>
+                    <p class="mb-1">
+                      Status:
+                      <span
+                        class="badge rounded-pill bg-success text-white px-3 py-1"
+                        >Active</span
+                      >
+                    </p>
+                    <div class="d-flex justify-content-end">
+                      <a href="#" class="text-primary text-decoration-none"
+                        >Edit</a
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card mb-3">
+                  <div class="card-body">
+                    <h6 class="mb-1">
+                      2. <strong>Username</strong> - BRK2424242
+                    </h6>
+                    <p class="mb-1">Commission: 15%</p>
+                    <p class="mb-1">
+                      Status:
+                      <span
+                        class="badge rounded-pill bg-success text-white px-3 py-1"
+                        >Active</span
+                      >
+                    </p>
+                    <div class="d-flex justify-content-end">
+                      <a href="#" class="text-primary text-decoration-none"
+                        >Edit</a
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card mb-3">
+                  <div class="card-body">
+                    <h6 class="mb-1">
+                      3. <strong>Username</strong> - PLH2343422
+                    </h6>
+                    <p class="mb-1">Commission: 8%</p>
+                    <p class="mb-1">
+                      Status:
+                      <span
+                        class="badge rounded-pill bg-danger text-white px-3 py-1"
+                        >Inactive</span
+                      >
+                    </p>
+                    <div class="d-flex justify-content-end">
+                      <a href="#" class="text-primary text-decoration-none"
+                        >Edit</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Commission Modal -->
+    <div
+      class="modal fade"
+      id="commissionModal"
+      tabindex="-1"
+      aria-labelledby="commissionModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content rounded-4 shadow-sm">
+          <div class="modal-header border-bottom">
+            <h6
+              class="modal-title mx-auto text-muted"
+              id="commissionModalLabel"
+            >
+              Set Commission
+            </h6>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="input-group">
+                <input
+                  type="number"
+                  class="form-control text-center"
+                  placeholder="Enter percentage"
+                  min="0"
+                  max="100"
+                  step="0.01"
+                  required
+                />
+                <span class="input-group-text">%</span>
+              </div>
+              <div class="text-center mt-4">
+                <button
+                  type="submit"
+                  class="btn fw-bold px-4 text-white"
+                  style="background-color: #6a00ff"
+                  data-bs-dismiss="modal"
+                >
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

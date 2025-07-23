@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vip Levels | Admin</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <!-- Topbar -->
+    <div
+      class="topbar d-flex justify-content-between align-items-center p-2 bg-light border-bottom"
+    >
+      <div class="d-flex align-items-center gap-2">
+        <!-- Hamburger toggle for mobile -->
+        <button
+          class="btn d-md-none"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasSidebar"
+          aria-controls="offcanvasSidebar"
+        >
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="topbar-logo">
+          <img src="./assets/logo.png" alt="Logo" height="36" />
+        </div>
+      </div>
+      <div class="avatar">
+        <img style="width: 36px" src="./assets/profile.png" alt="Avatar" />
+      </div>
+    </div>
+
+    <!-- Layout -->
+    <div class="layout d-flex">
+      <!-- Offcanvas Sidebar for mobile -->
+      <div
+        class="offcanvas offcanvas-start d-md-none"
+        tabindex="-1"
+        id="offcanvasSidebar"
+        aria-labelledby="offcanvasSidebarLabel"
+      >
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasSidebarLabel">Menu</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="offcanvas-body p-0">
+          <!-- Sidebar Content -->
+          <ul class="nav flex-column px-2">
+            <li>
+              <a href="./index.html" class="nav-link"
+                ><i class="fa fa-user"></i> Users</a
+              >
+            </li>
+            <!-- Products Dropdown (static for mobile) -->
+            <li>
+              <a
+                class="nav-link d-flex justify-content-between align-items-center"
+                data-bs-toggle="collapse"
+                href="#mobileProductsMenu"
+                role="button"
+                aria-expanded="false"
+                aria-controls="mobileProductsMenu"
+              >
+                <span><i class="fa fa-box"></i> Products</span>
+                <i class="fa fa-chevron-down small"></i>
+              </a>
+              <div class="collapse ps-3" id="mobileProductsMenu">
+                <ul class="nav flex-column">
+                  <li>
+                    <a href="./addProduct.html" class="nav-link"
+                      ><i class="fa fa-plus"></i> Add Product</a
+                    >
+                  </li>
+                  <li>
+                    <a href="./allProducts.html" class="nav-link"
+                      ><i class="fa fa-list"></i> All Products</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <a href="./allTasks.html" class="nav-link"
+                ><i class="fa fa-tasks"></i> Tasks</a
+              >
+            </li>
+            <li>
+              <a href="./contacts.html" class="nav-link"
+                ><i class="fa fa-trophy"></i> Contacts</a
+              >
+            </li>
+            <li>
+              <a href="./affiliate.html" class="nav-link"
+                ><i class="fa fa-link"></i> Affiliate</a
+              >
+            </li>
+            <li>
+              <a href="./vipLevels.html" class="nav-link active"
+                ><i class="fa fa-star"></i> VIP Levels</a
+              >
+            </li>
+            <li>
+              <a href="./payment.html" class="nav-link"
+                ><i class="fa fa-credit-card"></i> Payment</a
+              >
+            </li>
+            <li>
+              <a href="./setting.html" class="nav-link"
+                ><i class="fa fa-cog"></i> Settings</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Desktop Sidebar -->
+      <div
+        class="sidebar d-none d-md-block bg-white border-end"
+        style="width: 250px"
+      >
+        <div class="search-box">
+          <input type="text" placeholder="Search here..." />
+          <i class="fa fa-search text-dark"></i>
+        </div>
+        <ul class="nav flex-column px-2">
+          <li>
+            <a href="./index.html" class="nav-link"
+              ><i class="fa fa-user"></i> Users</a
+            >
+          </li>
+          <li>
+            <a
+              class="nav-link d-flex justify-content-between align-items-center"
+              data-bs-toggle="collapse"
+              href="#productsMenu"
+              role="button"
+              aria-expanded="false"
+              aria-controls="productsMenu"
+            >
+              <span><i class="fa fa-box"></i> Products</span>
+              <i class="fa fa-chevron-down small"></i>
+            </a>
+            <div class="collapse ps-3" id="productsMenu">
+              <ul class="nav flex-column">
+                <li>
+                  <a href="./addProduct.html" class="nav-link"
+                    ><i class="fa fa-plus"></i> Add Product</a
+                  >
+                </li>
+                <li>
+                  <a href="./allProducts.html" class="nav-link"
+                    ><i class="fa fa-list"></i> All Products</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="./allTasks.html" class="nav-link"
+              ><i class="fa fa-tasks"></i> Tasks</a
+            >
+          </li>
+          <li>
+            <a href="./contacts.html" class="nav-link"
+              ><i class="fa fa-trophy"></i> Contacts</a
+            >
+          </li>
+          <li>
+            <a href="./affiliate.html" class="nav-link"
+              ><i class="fa fa-link"></i> Affiliate</a
+            >
+          </li>
+          <li>
+            <a href="./vipLevels.html" class="nav-link active"
+              ><i class="fa fa-star"></i> VIP Levels</a
+            >
+          </li>
+          <li>
+            <a href="./payment.html" class="nav-link"
+              ><i class="fa fa-credit-card"></i> Payment</a
+            >
+          </li>
+          <li>
+            <a href="./setting.html" class="nav-link"
+              ><i class="fa fa-cog"></i> Settings</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <!-- Main Content -->
+      <div class="main-content flex-grow-1">
+        <!-- Paste your table, modal, and content exactly as you already have it -->
+        <!-- unchanged from your original -->
+
+        <div class="container py-4">
+          <!-- Page Title -->
+          <h5 class="fw-bold text-muted" style="font-size: 21.1px">
+            Vip Levels
+          </h5>
+          <div class="d-flex justify-content-end align-items-center gap-1 my-3">
+            <!-- empty space -->
+          </div>
+
+          <!-- Table -->
+          <div class="container px-2">
+            <div class="bg-white border rounded p-3">
+              <!-- table header -->
+              <div
+                class="row fw-bold align-items-center pb-2 mb-2"
+                style="border-bottom: 1.5px solid black !important"
+              >
+                <div class="col-1" style="padding-left: 22px">Level</div>
+                <div class="col-2">Name</div>
+                <div class="col-2">Task</div>
+                <div class="col-3">Commission %</div>
+                <div class="col-2 text-center">Image</div>
+                <div class="col-2 text-end">Action</div>
+              </div>
+
+              <!-- Table Rows -->
+              <div
+                class="row align-items-center bg-white border rounded py-3 mb-2 mx-0 gx-0"
+              >
+                <div
+                  class="col-1"
+                  style="padding-left: 15px; font-weight: 700 !important"
+                >
+                  1
+                </div>
+                <div class="col-2">
+                  <small class="fw-bold">Name</small>
+                </div>
+                <div class="col-2">40</div>
+                <div class="col-3 fw-bold">0.6</div>
+                <div class="col-2 text-center">
+                  <img src="./assets/upload.png" width="32" alt="Image" />
+                </div>
+                <div class="col-2 text-end">
+                  <a
+                    href="#"
+                    class="text-primary fw-semibold small edit-btn"
+                    data-bs-toggle="modal"
+                    data-bs-target="#editLevelModal"
+                    data-level="1"
+                    data-name="Level One"
+                    data-task="5"
+                    data-commission="0.5"
+                    style="padding-right: 9px !important"
+                  >
+                    Edit
+                  </a>
+                </div>
+              </div>
+
+              <div
+                class="row align-items-center bg-white border rounded py-3 mb-2 mx-0 gx-0"
+              >
+                <div
+                  class="col-1"
+                  style="padding-left: 15px; font-weight: 700 !important"
+                >
+                  2
+                </div>
+                <div class="col-2">
+                  <small class="fw-bold">Name</small>
+                </div>
+                <div class="col-2">45</div>
+                <div class="col-3 fw-bold">0.6</div>
+                <div class="col-2 text-center">
+                  <img src="./assets/upload.png" width="32" alt="Image" />
+                </div>
+                <div class="col-2 text-end">
+                  <a
+                    href="#"
+                    class="text-primary fw-semibold small edit-btn"
+                    data-bs-toggle="modal"
+                    data-bs-target="#editLevelModal"
+                    data-level="1"
+                    data-name="Level One"
+                    data-task="5"
+                    data-commission="0.5"
+                    style="padding-right: 9px !important"
+                  >
+                    Edit
+                  </a>
+                </div>
+              </div>
+
+              <div
+                class="row align-items-center bg-white border rounded py-3 mb-2 mx-0 gx-0"
+              >
+                <div
+                  class="col-1"
+                  style="padding-left: 15px; font-weight: 700 !important"
+                >
+                  3
+                </div>
+                <div class="col-2">
+                  <small class="fw-bold">Name</small>
+                </div>
+                <div class="col-2">50</div>
+                <div class="col-3 fw-bold">0.6</div>
+                <div class="col-2 text-center">
+                  <img src="./assets/upload.png" width="32" alt="Image" />
+                </div>
+                <div class="col-2 text-end">
+                  <a
+                    href="#"
+                    class="text-primary fw-semibold small edit-btn"
+                    data-bs-toggle="modal"
+                    data-bs-target="#editLevelModal"
+                    data-level="1"
+                    data-name="Level One"
+                    data-task="5"
+                    data-commission="0.5"
+                    style="padding-right: 9px !important"
+                  >
+                    Edit
+                  </a>
+                </div>
+              </div>
+
+              <div
+                class="row align-items-center bg-white border rounded py-3 mb-2 mx-0 gx-0"
+              >
+                <div
+                  class="col-1"
+                  style="padding-left: 15px; font-weight: 700 !important"
+                >
+                  4
+                </div>
+                <div class="col-2">
+                  <small class="fw-bold">Name</small>
+                </div>
+                <div class="col-2">55</div>
+                <div class="col-3 fw-bold">0.6</div>
+                <div class="col-2 text-center">
+                  <img src="./assets/upload.png" width="32" alt="Image" />
+                </div>
+                <div class="col-2 text-end">
+                  <a
+                    href="#"
+                    class="text-primary fw-semibold small edit-btn"
+                    data-bs-toggle="modal"
+                    data-bs-target="#editLevelModal"
+                    data-level="1"
+                    data-name="Level One"
+                    data-task="5"
+                    data-commission="0.5"
+                    style="padding-right: 9px !important"
+                  >
+                    Edit
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="editLevelModal"
+      tabindex="-1"
+      aria-labelledby="editLevelLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0" style="border-radius: 10px">
+          <div class="modal-body px-4 py-4 text-center">
+            <h6
+              id="editLevelLabel"
+              class="fw-normal mb-2 text-muted text-center"
+              style="font-size: 13px"
+            >
+              Level 1 - Setting
+            </h6>
+            <hr
+              class="mt-0 mb-3"
+              style="border-top: 1.5px solid black; opacity: 1"
+            />
+
+            <!-- <hr class="my-2" /> -->
+            <div class="mb-4">
+              <label
+                for="productImage"
+                class="d-inline-block p-3 border rounded"
+                style="cursor: pointer"
+              >
+                <img src="./assets/upload.png" alt="Upload Icon" width="80" />
+              </label>
+              <input type="file" id="productImage" hidden />
+            </div>
+            <form>
+              <div class="text-start mb-3">
+                <label class="form-label small mb-1">Name</label>
+                <input
+                  type="text"
+                  class="form-control form-control-sm rounded-1"
+                  id="levelName"
+                />
+              </div>
+              <div class="text-start mb-3">
+                <label class="form-label small mb-1">Task</label>
+                <input
+                  type="text"
+                  class="form-control form-control-sm rounded-1"
+                  id="levelTask"
+                />
+              </div>
+              <div class="text-start mb-4">
+                <label class="form-label small mb-1">Commission</label>
+                <input
+                  type="text"
+                  class="form-control form-control-sm rounded-1"
+                  id="levelCommission"
+                />
+              </div>
+              <button
+                type="submit"
+                class="btn w-100 fw-bold text-white"
+                style="background: #7300ff; font-size: 14px"
+              >
+                Submit
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal + Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
